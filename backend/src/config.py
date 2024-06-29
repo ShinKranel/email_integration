@@ -8,21 +8,19 @@ load_dotenv()
 class Settings(BaseSettings):
     PROJECT_TITLE: str
 
-    POSTGRES_HOST: str
-    POSTGRES_PORT: int
-    POSTGRES_USER: str
-    POSTGRES_PASSWORD: str
-    POSTGRES_NAME: str
+    DB_HOST: str
+    DB_PORT: str
+    DB_USER: str
+    DB_PASS: str
+    DB_NAME: str
 
     @property
     def DATABASE_URL_ASYNC(self):
-        return f"postgres+asyncpg://{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}%{self.POSTGRES_HOST}:\
-                                    {self.POSTGRES_PORT}/{self.POSTGRES_NAME}"
+        return f"postgresql+asyncpg://{self.DB_USER}:{self.DB_PASS}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
 
     @property
     def DATABASE_URL(self):
-        return f"postgres+psycopg2://{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}%{self.POSTGRES_HOST}:\
-                                    {self.POSTGRES_PORT}/{self.POSTGRES_NAME}"
+        return f"postgresql+psycopg2://{self.DB_USER}:{self.DB_PASS}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
 
     model_config = SettingsConfigDict(env_file=".env")
 
