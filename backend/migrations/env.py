@@ -7,6 +7,7 @@ from alembic import context
 
 from backend.src.config import settings
 from backend.src.db import Base
+from backend.src.get_emails.models import User, Email
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

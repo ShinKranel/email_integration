@@ -1,0 +1,34 @@
+.email_container {
+    background-color: #f2edf6;
+    margin: 80px 120px;
+    padding: 30px 50px;
+}
+
+.send_from {
+    margin-bottom: -20px;
+    color: #888888;
+    font-family: "Century", sans-serif;
+}
+
+.sender {
+    color: #c2c2c2;
+    font-size: 14px;
+    font-family: "Century", sans-serif;
+}
+
+.email_header{
+    font-size: 22px;
+    font-weight: 600;
+    font-family: "Century", sans-serif;
+}
+
+.receive_date {
+    font-family: "Century", sans-serif;
+    color: #888888;
+    font-size: 14px;
+    margin-top: -20px;
+}
+
+.email_text {
+        font-family: "Century", sans-serif;
+}

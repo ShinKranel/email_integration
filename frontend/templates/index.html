@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Your emails</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+</head>
+<body>
+    {% for email in emails %}
+        <div class="email_container">
+            <p class="send_from"><span class="sender">Отправитель:</span> {{ email.send_from }}</p>
+            <p class="email_header">{{ email.email_header }}</p>
+            <p class="receive_date">{{ email.receive_date }}</p>
+            <p class="email_text">{{ email.email_text }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>

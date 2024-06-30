@@ -14,6 +14,11 @@ class Settings(BaseSettings):
     DB_PASS: str
     DB_NAME: str
 
+    STATIC_DIR: str
+    TEMPLATES_DIR: str
+
+    BACKEND_CORS_ORIGINS: list[str]
+
     @property
     def DATABASE_URL_ASYNC(self):
         return f"postgresql+asyncpg://{self.DB_USER}:{self.DB_PASS}@{self.DB_HOST}:{self.DB_PORT}/{self.DB_NAME}"
